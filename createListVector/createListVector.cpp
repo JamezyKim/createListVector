@@ -20,5 +20,23 @@ int main() {
 		~Node() {}
 	};
 
+	class LinkedList {
+	private:
+		Node* front;
+		Node* back;
+		int size;
+	public:
+
+		LinkedList() {
+			this->front = NULL;
+			this->back = NULL;
+			this->size = 0;
+		}
+
+		
+
+		~LinkedList() {}
+	};
+
 	return 0;
 }
