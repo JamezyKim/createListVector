@@ -117,6 +117,39 @@ public:
 	~LinkedList() {}
 };
 
+
+class VectorV {
+private:
+	int size;
+	int capacity;
+	int* data;
+public:
+	VectorV() {
+		this->size = 0;
+		this->capacity = 0;
+		this->data = NULL;
+	}
+
+	int resize(int overSize) {
+		int result = this->size + overSize;
+		return result;
+	}
+
+	void insertNode(int value) {
+		for (int i = 0; i < size; i++) {
+			data[i] = value;
+		}
+	}
+
+
+
+
+	~VectorV() {}
+};
+
+
+
+
 int main() {
 
 
