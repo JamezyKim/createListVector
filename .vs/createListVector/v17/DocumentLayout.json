@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\createListVector\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F7FF2C7-D648-4B45-8B81-56267D71329C}|createListVector\\createListVector.vcxproj|C:\\Users\\PC\\source\\repos\\createListVector\\createListVector\\createListVector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2F7FF2C7-D648-4B45-8B81-56267D71329C}|createListVector\\createListVector.vcxproj|solutionrelative:createListVector\\createListVector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "createListVector.cpp",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\createListVector\\createListVector\\createListVector.cpp",
+              "RelativeDocumentMoniker": "createListVector\\createListVector.cpp",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\createListVector\\createListVector\\createListVector.cpp*",
+              "RelativeToolTip": "createListVector\\createListVector.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-09T20:03:22.812Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
