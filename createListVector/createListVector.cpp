@@ -74,6 +74,46 @@ public:
 		return;
 	}
 
+	int popFront() {
+		if (this->front == NULL && this->back == NULL) {
+			return -1;
+		}
+		Node* tempNode = this->front;
+		if (size <= 1) {
+			int result = tempNode->value;
+			this->back = NULL;
+			this->front = NULL;
+			delete tempNode;
+			return result;
+		}
+		this->front = this->front->next;
+		this->front->prev = NULL;
+		int result = tempNode->value;
+		delete tempNode;
+		size--;
+		return result;
+	}
+
+	int popBack() {
+		if (this->front == NULL && this->back == NULL) {
+			return -1;
+		}
+		Node* tempNode = this->back;
+		if (size <= 1) {
+			int result = tempNode->value;
+			this->back = NULL;
+			this->front = NULL;
+			delete tempNode;
+			return result;
+		}
+		this->back = this->back->prev;
+		int result = tempNode->value;
+		this->back->next = NULL;
+		delete tempNode;
+		size--;
+		return result;
+	}
+
 	~LinkedList() {}
 };
 
