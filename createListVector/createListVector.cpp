@@ -57,8 +57,26 @@ public:
 		size++;
 		return;
 	}
+
+	void pushBack(int value) {
+		Node* newNode = new Node(value);
+		if (this->front == NULL && this->back == NULL) {
+			this->front = newNode;
+			this->back = newNode;
+			size++;
+			return;
+		}
+		newNode->prev = this->back;
+		this->back->next = newNode;
+		this->back = newNode;
+		newNode->value = value;
+		size++;
+		return;
+	}
+
 	~LinkedList() {}
 };
+
 int main() {
 
 
