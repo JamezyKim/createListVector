@@ -33,7 +33,16 @@ int main() {
 			this->size = 0;
 		}
 
-		
+		void printNodes() {
+			while (front->next != NULL) {
+				cout << front->value << " -> ";
+				front = front->next;
+			}
+			if (front->next == NULL) {
+				cout << front->value;
+			}
+			return;
+		}
 
 		~LinkedList() {}
 	};
