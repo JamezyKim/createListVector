@@ -1,5 +1,7 @@
 #include <iostream>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
 class Node {
 private:
@@ -200,14 +202,19 @@ public:
 
 int main() {
 	VectorV v;
+	LinkedList l;
 
+	auto startV = high_resolution_clock::now();
 	v.pushFront(1);
 	v.pushFront(2);
-	v.popBack();
 	v.pushFront(3);
-	v.pushFront(7);
-	v.pushFront(9);
-	v.printVector();
+	v.pushFront(4);
+	auto stopV = high_resolution_clock::now();
+	auto durationV = duration_cast<microseconds>(stopV - startV);
+	cout << durationV.count() << endl;
+
+
+
 
 	return 0;
 }
