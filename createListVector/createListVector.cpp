@@ -126,7 +126,7 @@ private:
 public:
 	VectorV() {
 		this->size = 0;
-		this->capacity = 5;
+		this->capacity = 3;
 		this->data = new int[this->capacity];
 	}
 
@@ -199,8 +199,15 @@ public:
 
 
 int main() {
-
 	VectorV v;
+
+	v.pushFront(1);
+	v.pushFront(2);
+	v.popBack();
+	v.pushFront(3);
+	v.pushFront(7);
+	v.pushFront(9);
+	v.printVector();
 
 	return 0;
 }
