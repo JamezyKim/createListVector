@@ -162,7 +162,13 @@ public:
 		this->data[0] = value;
 	}
 
-
+	void pushBack(int value) {
+		if (this->size >= this->capacity) {
+			resize(this->size - this->capacity);
+		}
+		this->data[this->size] = value;
+		this->size++;
+	}
 
 
 
