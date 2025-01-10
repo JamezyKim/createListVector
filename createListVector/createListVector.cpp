@@ -197,9 +197,6 @@ public:
 	~VectorV() {}
 };
 
-
-
-
 int main() {
 	VectorV v;
 	LinkedList l;
@@ -210,8 +207,10 @@ int main() {
 	v.pushFront(3);
 	v.pushFront(4);
 	auto stopV = high_resolution_clock::now();
-	auto durationV = duration_cast<microseconds>(stopV - startV);
-	cout << durationV.count() << endl;
+	auto durationVMicroseconds = duration_cast<microseconds>(stopV - startV);
+	auto durationVSeconds = duration_cast<seconds>(stopV - startV);
+	cout << "The duration of the vector is: " << durationVSeconds.count() << " seconds" << endl;
+	cout << "The duration of the vector is: " << durationVMicroseconds.count() << " microseconds" << endl;
 
 	auto startL = high_resolution_clock::now();
 	l.pushFront(1);
@@ -219,8 +218,10 @@ int main() {
 	l.pushFront(3);
 	l.pushFront(4);
 	auto stopL = high_resolution_clock::now();
-	auto durationL = duration_cast<microseconds>(stopL - startL);
-	cout << durationL.count() << endl;
+	auto durationLMicroseconds = duration_cast<microseconds>(stopL - startL);
+	auto durationLSeconds = duration_cast<seconds>(stopL - startL);
+	cout << "The duration of the list is: " << durationLSeconds.count() << " seconds" << endl;
+	cout << "The duration of the list is: " << durationLMicroseconds.count() << " microseconds" << endl;
 
 
 	return 0;
