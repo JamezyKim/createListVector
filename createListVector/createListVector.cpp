@@ -140,7 +140,23 @@ public:
 
 	}
 
-	
+	void resize(int overSize) {
+		int newCapacity = this->size + overSize;
+		int* newData = new int[newCapacity];
+		for (int i = 0; i < this->size; i++) {
+			newData[i] = this->data[i];
+		}
+		delete this->data;
+		this->data = newData;
+		this->capacity = newCapacity;
+	}
+
+
+
+
+
+
+
 
 	~VectorV() {}
 };
