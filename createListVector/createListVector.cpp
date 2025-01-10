@@ -213,7 +213,14 @@ int main() {
 	auto durationV = duration_cast<microseconds>(stopV - startV);
 	cout << durationV.count() << endl;
 
-
+	auto startL = high_resolution_clock::now();
+	l.pushFront(1);
+	l.pushFront(2);
+	l.pushFront(3);
+	l.pushFront(4);
+	auto stopL = high_resolution_clock::now();
+	auto durationL = duration_cast<microseconds>(stopL - startL);
+	cout << durationL.count() << endl;
 
 
 	return 0;
