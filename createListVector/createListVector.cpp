@@ -151,7 +151,16 @@ public:
 		this->capacity = newCapacity;
 	}
 
-
+	void pushFront(int value) {
+		this->size++;
+		if (this->size >= this->capacity) {
+			resize(this->size - this->capacity);
+		}
+		for (int i = this->size - 1; i > 0; i--) {
+			data[i] = data[i - 1];
+		}
+		this->data[0] = value;
+	}
 
 
 
