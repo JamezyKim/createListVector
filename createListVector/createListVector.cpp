@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include <string>
 using namespace std;
 using namespace std::chrono;
 
@@ -197,31 +198,78 @@ public:
 	~VectorV() {}
 };
 
-int main() {
+void printVDurationMicroseconds() {
 	VectorV v;
-	LinkedList l;
-
 	auto startV = high_resolution_clock::now();
 	v.pushFront(1);
 	v.pushFront(2);
 	v.pushFront(3);
 	v.pushFront(4);
 	auto stopV = high_resolution_clock::now();
-	auto durationVMicroseconds = duration_cast<microseconds>(stopV - startV);
-	auto durationVSeconds = duration_cast<seconds>(stopV - startV);
-	cout << "The duration of the vector is: " << durationVSeconds.count() << " seconds" << endl;
-	cout << "The duration of the vector is: " << durationVMicroseconds.count() << " microseconds" << endl;
+	auto durationV = duration_cast<microseconds>(stopV - startV);
+	cout << "The duration of the vector is: " << durationV.count() << " microseconds" << endl;
 
+}
+
+void printVDurationSeconds() {
+	VectorV v;
+	auto startV = high_resolution_clock::now();
+	v.pushFront(1);
+	v.pushFront(2);
+	v.pushFront(3);
+	v.pushFront(4);
+	auto stopV = high_resolution_clock::now();
+	auto durationV = duration_cast<seconds>(stopV - startV);
+	cout << "The duration of the vector is: " << durationV.count() << " seconds" << endl;
+
+}
+
+void printLDurationMicroseconds() {
+	LinkedList l;
 	auto startL = high_resolution_clock::now();
 	l.pushFront(1);
 	l.pushFront(2);
 	l.pushFront(3);
 	l.pushFront(4);
 	auto stopL = high_resolution_clock::now();
-	auto durationLMicroseconds = duration_cast<microseconds>(stopL - startL);
-	auto durationLSeconds = duration_cast<seconds>(stopL - startL);
-	cout << "The duration of the list is: " << durationLSeconds.count() << " seconds" << endl;
-	cout << "The duration of the list is: " << durationLMicroseconds.count() << " microseconds" << endl;
+	auto durationL = duration_cast<microseconds>(stopL - startL);
+	cout << "The duration of the list is: " << durationL.count() << " microseconds" << endl;
+
+}
+
+void printLDurationSeconds() {
+	LinkedList l;
+	auto startL = high_resolution_clock::now();
+	l.pushFront(1);
+	l.pushFront(2);
+	l.pushFront(3);
+	l.pushFront(4);
+	auto stopL = high_resolution_clock::now();
+	auto durationL = duration_cast<seconds>(stopL - startL);
+	cout << "The duration of the list is: " << durationL.count() << " seconds" << endl;
+
+}
+
+int main() {
+	string result;
+	cout << "Welcome. To exit, press x." << endl;
+	do {
+		cout << "Please choose either Vector or List: ";
+		getline(cin, result);
+		if (result == "Vector" || result == "vector") {
+			printVDurationSeconds();
+			printVDurationMicroseconds();
+		}
+		else if (result == "List" || result == "list") {
+			printLDurationSeconds();
+			printLDurationMicroseconds();
+		}
+		else if(result != "x") {
+			cout << "Sorry, " << result << " has not been successfully searched." << endl;
+		}
+	} while (result != "x");
+	cout << "Thank you" << endl;
+
 
 
 	return 0;
