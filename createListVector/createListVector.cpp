@@ -170,7 +170,17 @@ public:
 		this->size++;
 	}
 
-
+	int popFront() {
+		if (this->size == 0) {
+			return -1;
+		}
+		int result = this->data[0];
+		for (int i = 0; i <= this->size; i++) {
+			this->data[i] = this->data[i + 1];
+		}
+		this->size--;
+		return result;
+	}
 
 
 	~VectorV() {}
