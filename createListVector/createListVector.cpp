@@ -182,6 +182,15 @@ public:
 		return result;
 	}
 
+	int popBack() {
+		if (this->size == 0) {
+			return -1;
+		}
+		int result = data[this->size - 1];
+		this->size--;
+		return result;
+	}
+
 
 	~VectorV() {}
 };
