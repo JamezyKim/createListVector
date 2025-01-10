@@ -126,23 +126,21 @@ private:
 public:
 	VectorV() {
 		this->size = 0;
-		this->capacity = 0;
-		this->data = NULL;
+		this->capacity = 5;
+		this->data = new int[this->capacity];
 	}
 
-	int resize(int overSize) {
-		int result = this->size + overSize;
-		return result;
-	}
-
-	void insertNode(int value) {
-		for (int i = 0; i < size; i++) {
-			data[i] = value;
+	void printVector() {
+		int count = 0;
+		while (count+1 < this->size) {
+			cout << data[count] << " -> ";
+			count++;
 		}
+		cout << data[count];
+
 	}
 
-
-
+	
 
 	~VectorV() {}
 };
@@ -152,10 +150,7 @@ public:
 
 int main() {
 
-
-
-
-
+	VectorV v;
 
 	return 0;
 }
