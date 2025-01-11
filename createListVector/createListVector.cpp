@@ -201,52 +201,60 @@ public:
 void printVDurationMicroseconds() {
 	VectorV v;
 	auto startV = high_resolution_clock::now();
-	v.pushFront(1);
-	v.pushFront(2);
-	v.pushFront(3);
-	v.pushFront(4);
+	int count = 0;
+	for (int i = 0; i < 10000; i++) {
+		v.pushFront(i);
+		count = i;
+	}
 	auto stopV = high_resolution_clock::now();
 	auto durationV = duration_cast<microseconds>(stopV - startV);
-	cout << "The duration of the vector is: " << durationV.count() << " microseconds" << endl;
+	cout << "The function has called " << count << " times." << endl <<
+		"The duration of the vector is: " << durationV.count() << " microseconds" << endl;
 
 }
 
 void printVDurationSeconds() {
 	VectorV v;
 	auto startV = high_resolution_clock::now();
-	v.pushFront(1);
-	v.pushFront(2);
-	v.pushFront(3);
-	v.pushFront(4);
+	int count = 0;
+	for (int i = 0; i < 10000; i++) {
+		v.pushFront(i);
+		count = i;
+	}
 	auto stopV = high_resolution_clock::now();
 	auto durationV = duration_cast<seconds>(stopV - startV);
-	cout << "The duration of the vector is: " << durationV.count() << " seconds" << endl;
+	cout << "The function has called " << count << " times." << endl
+		<< "The duration of the vector is: " << durationV.count() << " seconds" << endl;
 
 }
 
 void printLDurationMicroseconds() {
 	LinkedList l;
 	auto startL = high_resolution_clock::now();
-	l.pushFront(1);
-	l.pushFront(2);
-	l.pushFront(3);
-	l.pushFront(4);
+	int count = 0;
+	for (int i = 0; i < 10000; i++) {
+		l.pushFront(i);
+		count = i;
+	}
 	auto stopL = high_resolution_clock::now();
 	auto durationL = duration_cast<microseconds>(stopL - startL);
-	cout << "The duration of the list is: " << durationL.count() << " microseconds" << endl;
+	cout << "The function has called " << count << " times." << endl
+		<< "The duration of the list is: " << durationL.count() << " microseconds" << endl;
 
 }
 
 void printLDurationSeconds() {
 	LinkedList l;
+	int count = 0;
 	auto startL = high_resolution_clock::now();
-	l.pushFront(1);
-	l.pushFront(2);
-	l.pushFront(3);
-	l.pushFront(4);
+	for (int i = 0; i < 10000; i++) {
+		l.pushFront(i);
+		count = i;
+	}
 	auto stopL = high_resolution_clock::now();
 	auto durationL = duration_cast<seconds>(stopL - startL);
-	cout << "The duration of the list is: " << durationL.count() << " seconds" << endl;
+	cout << "The function has called " << count << " times." << endl 
+		<< "The duration of the list is: " << durationL.count() << " seconds" << endl;
 
 }
 
@@ -254,7 +262,7 @@ int main() {
 	string result;
 	cout << "Welcome. To exit, press x." << endl;
 	do {
-		cout << "Please choose either Vector or List: ";
+		cout << endl << "Please choose either Vector or List: ";
 		getline(cin, result);
 		if (result == "Vector" || result == "vector") {
 			printVDurationSeconds();
@@ -269,8 +277,6 @@ int main() {
 		}
 	} while (result != "x");
 	cout << "Thank you" << endl;
-
-
 
 	return 0;
 }
